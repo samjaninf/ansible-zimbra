@@ -1,6 +1,6 @@
 ---
 
-- name: Deshabilitar resolvedor local
+- name: Disable local resolver
   ansible.builtin.ini_file:
     path: /etc/systemd/resolved.conf
     section: Resolve
@@ -8,20 +8,20 @@
     value: "no"
   register: disable_dns_stub_listener
 
-- name: Destruir enlace simbólico
+- name: Delete symbolic link
   file:
     path: /etc/resolv.conf
     state: absent
   when: disable_dns_stub_listener.changed
 
-- name: Crear enlace simbólico
+- name: Create symbolic link
   file:
     path: /etc/resolv.conf
     src: /run/systemd/resolve/resolv.conf
     state: link
   when: disable_dns_stub_listener.changed
 
-- name: Reiniciar servicio systemd-resolved
+- name: Restart systemd-resolved service
   ansible.builtin.service:
     name: systemd-resolved
     state: restarted

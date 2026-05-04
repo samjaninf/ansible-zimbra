@@ -45,3 +45,4 @@ timezone: UTC
 ################################################################################
 zimbra_version: 8.8.15
 
+disable_existing_dns_stub_listener: n

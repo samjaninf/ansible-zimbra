@@ -28,8 +28,8 @@
   when: zimbra_store == 'y'
 - import_tasks: 'configure/mta.yml'
   when: zimbra_mta == 'y'
-- import_tasks: 'configure/dnscache.yml'
-  when: zimbra_dnscache == 'y'
+- import_tasks: 'configure/disable_existing_dns_stub_listener.yml'
+  when: zimbra_dnscache == 'y' and disable_existing_dns_stub_listener == 'y'
 
 #
 # Extras configuration process
