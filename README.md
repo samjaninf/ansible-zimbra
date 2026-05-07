@@ -71,6 +71,7 @@ zm_repo:
         8: ...
         9: ...
 ```
+* **disable_existing_dns_stub_listener:** Inform "y" to disable the systemd-resolved DNS stub listener and free up port 53. Default: **n**
 
 Service Variables - Inform "y" or "n"
 --------------
