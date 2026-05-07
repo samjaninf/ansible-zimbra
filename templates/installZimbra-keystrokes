@@ -10,7 +10,9 @@ y
 {{ zimbra_spell }}
 {{ zimbra_memcached }}
 {{ zimbra_proxy }}
+{% if zimbra_version == '8.8.15' %}
 {{ zimbra_chat }}
 {{ zimbra_drive }}
 {{ zimbra_imapd }}
+{% endif %}
 y
