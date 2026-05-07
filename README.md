@@ -54,6 +54,7 @@ Role Variables
 * **zmlogoapp:** Inform the path for your logo (Application Screen) - don't inform and no image will be applied;
 * **timezone:** inform the timezone the playbook should set in your server;
 * **zimbra_version:** Inform which version of Zimbra you want to install. Default: 8.8.15
+* **disable_existing_dns_stub_listener:** Inform "y" to disable the systemd-resolved DNS stub listener and free up port 53. Default: **n**
 
 Service Variables - Inform "y" or "n"
 --------------
