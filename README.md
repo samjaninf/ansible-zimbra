@@ -54,6 +54,23 @@ Role Variables
 * **zmlogoapp:** Inform the path for your logo (Application Screen) - don't inform and no image will be applied;
 * **timezone:** inform the timezone the playbook should set in your server;
 * **zimbra_version:** Inform which version of Zimbra you want to install. Default: 8.8.15
+* **zm_repo:** Variable to inform which repository of Zimbra builds you want to download from. You need to set **url**, and a dictonary of **builds** according to distribution and distribution version.
+Example:
+```
+zm_repo:
+  10.1.15:
+    url: https://example.repositorio.zimbra
+    builds:
+      ubuntu:
+        20: zcs-10.1.15_GA_0425.UBUNTU20_64...
+        22: zcs-10.1.15_GA_0425.UBUNTU22_64....
+      redhat:
+        8: ...
+        9: ...
+      centos:
+        8: ...
+        9: ...
+```
 * **disable_existing_dns_stub_listener:** Inform "y" to disable the systemd-resolved DNS stub listener and free up port 53. Default: **n**
 
 Service Variables - Inform "y" or "n"
